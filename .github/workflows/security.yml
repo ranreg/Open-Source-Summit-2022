@@ -56,12 +56,12 @@ jobs:
 
       - name: Build an image from Dockerfile
         run: |
-          docker build -t docker.io/dvdmelamed/goat-movies:${{ github.sha }} .
+          docker build -t docker.io/ranregen/goat-movies:${{ github.sha }} .
 
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: 'docker.io/dvdmelamed/goat-movies:${{ github.sha }}'
+          image-ref: 'docker.io/ranregen/goat-movies:${{ github.sha }}'
           format: 'table'
           exit-code: '1'
           ignore-unfixed: true
@@ -73,7 +73,7 @@ jobs:
     name: API-Security-Scanner
     services:
       movies:
-        image: ghcr.io/dvdmelamed/goat-movies
+        image: ghcr.io/ranregen/goat-movies
         options: >-
           --health-cmd="curl http://127.0.0.1:80/movies/count || exit 1"
           --health-interval=10s
@@ -88,3 +88,4 @@ jobs:
           format: openapi
           target: 'http://127.0.0.1:8089/openapi.json'
           fail_action: true
+

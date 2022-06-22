@@ -1,6 +1,8 @@
 resource "aws_s3_bucket" "this" {
   bucket = var.bucket_name
   acl    = "public"
+  
+  AWS_ACCESS_KEY_ID = "AKIAIOSFODNN7EXAMPLE4"
 
   versioning {
     enabled = true

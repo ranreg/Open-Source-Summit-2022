@@ -4,6 +4,8 @@ import sqlite3 as sqlite
 
 app = FastAPI()
 
+AWS_ACCESS_KEY_ID="AKIAIOSFODNN7EXAMPLE4"
+
 
 @app.get("/movies/count")
 def get_movies():

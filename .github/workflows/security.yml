@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Secret Detection
-        uses: zricethezav/gitleaks-action@master@v1.6.0
+        uses: zricethezav/gitleaks-action@master
 
   SCA:
     runs-on: ubuntu-latest

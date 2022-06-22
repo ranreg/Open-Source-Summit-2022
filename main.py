@@ -4,6 +4,7 @@ import sqlite3 as sqlite
 
 app = FastAPI()
 
+GITHUB_TOKEN = "ghp_111111111111111111111111111111111111"
 
 @app.get("/movies/count")
 def get_movies():

@@ -67,25 +67,3 @@ jobs:
           ignore-unfixed: true
           vuln-type: 'os,library'
           severity: 'CRITICAL,HIGH'
-
-  DAST:
-    runs-on: ubuntu-latest
-    name: API-Security-Scanner
-    services:
-      movies:
-        image: ghcr.io/ranregen/goat-movies
-        options: >-
-          --health-cmd="curl http://127.0.0.1:80/movies/count || exit 1"
-          --health-interval=10s
-          --health-timeout=5s
-          --health-retries=5
-        ports:
-          - 8089:80
-    steps:
-      - name: ZAP Scan
-        uses: zaproxy/action-api-scan@v0.1.0
-        with:
-          format: openapi
-          target: 'http://127.0.0.1:8089/openapi.json'
-          fail_action: true
-

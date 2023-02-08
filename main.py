@@ -6,6 +6,8 @@ app = FastAPI()
 
 GITHUB_TOKEN = "ghp_111111111111111111111111111111111111"
 
+GITHUB_TOKEN2 = "ghp_111111111111111111111111111111111111"
+
 @app.get("/movies/count")
 def get_movies():
     db = sqlite.connect("movies.db")

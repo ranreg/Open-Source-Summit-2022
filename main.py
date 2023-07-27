@@ -4,6 +4,10 @@ import sqlite3 as sqlite
 
 app = FastAPI()
 
+
+AWS_SECRET4 = "AKIAIOSFODNN7EXAMPLE"
+
+
 GITHUB_TOKEN = "ghp_111111111111111111111111111111111111"
 
 @app.get("/movies/count")
